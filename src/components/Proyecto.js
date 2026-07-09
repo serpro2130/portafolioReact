@@ -11,18 +11,18 @@ export const Proyecto = () => {
     useEffect(() => {
       let proyecto = trabajos.filter(trabajo => trabajo.id === params.id);
       setProyecto(proyecto[0]);
-    }, [])
+    }, [params.id])
     
 
   return (
     <div className='page page-work'>
         <div className="mask">
-            <img src={"/images/" + proyecto.id + ".png"} />
+            <img src={"/images/" + proyecto.id + ".png"} alt={proyecto.nombre} />
         </div>
         <h1 className='heading'>{proyecto.nombre}</h1>
         <p>{proyecto.tecnologias}</p>
         <p>{proyecto.descripcion}</p>
-        <a href={"https://"+proyecto.url} target="_blank">Ir al proyecto</a>
+        <a href={"https://"+proyecto.url} target="_blank" rel="noreferrer">Ir al proyecto</a>
 
 
 
